@@ -1,0 +1,21 @@
+{
+  "name": "iMark",
+  "description": "我的收藏夹!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage","bookmarks","tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/bookmarks16.png",
+      "32": "/images/bookmarks32.png",
+      "48": "/images/bookmarks48.png",
+      "128": "/images/bookmarks128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/bookmarks16.png",
+    "32": "/images/bookmarks32.png",
+    "48": "/images/bookmarks48.png",
+    "128": "/images/bookmarks128.png"
+  }}

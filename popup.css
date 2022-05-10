@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+span {
+}
+
+.main {
+    width: 500px;
+    padding: 15px;
+    background: #27282b;
+}
+
+.folder-wrapper {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.folder-title {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+.url-icon {
+    width: 20px;
+    height: 20px;
+}
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #27282b;
+}
+.folder-item-wrapper:hover .delete-icon {
+    display: block;
+}
+.folder-item-wrapper:hover  .folder-item{
+    color: #b1b1b1;
+}
+
+.folder-wrapper .folder-item {
+    line-height: 1.8;
+    cursor: default;
+    padding-left: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+.folder-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5em;
+}
+.folder-item-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
