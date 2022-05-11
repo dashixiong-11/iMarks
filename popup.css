@@ -48,7 +48,7 @@ span {
     color: #b1b1b1;
 }
 
-.folder-wrapper .folder-item {
+.folder-item {
     line-height: 1.8;
     cursor: default;
     padding-left: 2em;
@@ -67,4 +67,24 @@ span {
     display: flex;
     align-items: center;
     position: relative;
+}
+.search {
+    margin-bottom: 1em;
+}
+.search input {
+    outline-style: none;
+    padding: 0 1em;
+    line-height: 30px;
+    border-radius: 15px;
+    background-color: gray;
+    width: 100%;
+    border: none;
+}
+.request-view  {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+}
+.request-view .folder-item:hover {
+    color: #b1b1b1;
 }
