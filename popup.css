@@ -69,11 +69,20 @@ span {
     position: relative;
 }
 .search {
+    display: flex;
+    align-items: center;
     margin-bottom: 1em;
+    position: relative;
+}
+.search-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: calc(1.5em - 8px);
 }
 .search input {
     outline-style: none;
-    padding: 0 1em;
+    padding: 0 3em;
     line-height: 30px;
     border-radius: 15px;
     background-color: gray;
@@ -87,4 +96,8 @@ span {
 }
 .request-view .folder-item:hover {
     color: #b1b1b1;
+}
+.url-icon {
+    width: 20px;
+    height: 20px;
 }

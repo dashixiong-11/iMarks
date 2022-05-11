@@ -3,7 +3,11 @@
   "description": "我的收藏夹!",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["storage","bookmarks","tabs"],
+  "permissions": [
+    "bookmarks",
+    "tabs"
+  ],
+  "host_permissions": ["https://*/"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -18,4 +22,5 @@
     "32": "/images/bookmarks32.png",
     "48": "/images/bookmarks48.png",
     "128": "/images/bookmarks128.png"
-  }}
+  }
+}

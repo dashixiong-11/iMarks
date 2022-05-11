@@ -86,14 +86,13 @@ IMarks.prototype.createFolderSelf = function (item) {
 IMarks.prototype.createFolderItem = function (item) {
     const div = document.createElement('div')
     div.setAttribute('class', 'folder-item-wrapper')
+    div.setAttribute('id', item.id)
     const deleteIcon = this.createDeleteIcon(item)
-    //const img = document.createElement('img')
-    //img.setAttribute('class', 'url-icon')
-    //img.setAttribute('src', `chrome://favicon2/?size=16&scale_factor=1x&page_url=${encodeURIComponent(item.url)}&allow_google_server_fallback=0`)
-    //img.setAttribute('style', `chrome://favicon/${encodeURIComponent(item.url)}`)
-    //img.style = `background-image: -webkit-image-set(url("chrome://favicon2/?size=16&scale_factor=1x&page_url=${encodeURIComponent(item.url)}&allow_google_server_fallback=0") 1x, url("chrome://favicon2/?size=16&scale_factor=2x&page_url=${encodeURIComponent(item.url)}&allow_google_server_fallback=0") 2x)`
-    //div.appendChild(img)
+    const favicon = document.createElement('i')
+    favicon.setAttribute('calss','url-icon')
+    favicon.setAttribute('style', `background-image: url(chrome://favicon/${item.url})`)
     const span = this.createFolderItemSpan(item)
+    div.appendChild(favicon)
     div.appendChild(span)
     div.appendChild(deleteIcon)
     return div
@@ -122,7 +121,15 @@ IMarks.prototype.createFolderItemSpan = function (item) {
     return span
 }
 IMarks.prototype.listenRemove = function () {
-    chrome.bookmarks.onRemoved.addListener(() => { this.update() })
+    chrome.bookmarks.onRemoved.addListener((id) => {
+        this.removeNode(id)
+        //this.update()
+    })
+}
+
+IMarks.prototype.removeNode = function (id) {
+    const node = document.getElementById(id)
+    node.remove()
 }
 IMarks.prototype.listenSearch = function () {
     document.getElementById('search-input').addEventListener('input', () => {
